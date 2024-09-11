@@ -1,15 +1,11 @@
 import requests
 
 
-# Retrieve robots.txt
+# Product page
 
-user_agent_policy = requests.get('https://www.amazon.in/robots.txt')
+url = "https://www.amazon.com/Kitsure-Large-Dish-Drying-Rack/dp/B0B76DW8LQ/"
 
-robots_txt = user_agent_policy.text.splitlines()
+response = requests.get(url)
 
-for line in robots_txt:
-    print("new line here")
-
-buy_reeses = requests.get("https://www.amazon.in/Hersheys-Reeses-Miniature-Chocolate-Sharing/dp/B07N22FPN2/")
-
-print(buy_reeses.text)
+print(response.text)
+print(response.status_code)
